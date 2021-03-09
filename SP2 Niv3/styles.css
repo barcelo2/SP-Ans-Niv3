@@ -1,0 +1,143 @@
+/*MAIN*/
+
+body {
+  font-family: "lato", sans-serif;
+  height: 100%;
+}
+
+#container {
+  margin-left: -0.9rem;
+  margin-right: -0.9rem;
+  border: 0%;
+  display: flex;
+  overflow: hidden;
+  flex-wrap: nowrap;
+  height: 100%;
+  text-align: center;
+  align-content: center;
+  justify-content: space-between;
+}
+
+.box {
+  width: 20%;
+  height: 100%;
+}
+
+/*STRIPES*/
+
+.stripe {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.name {
+  color: white;
+  margin: 0;
+  justify-content: center;
+  display: block;
+  font-size: 4vw;
+  font-weight: lighter;
+}
+
+#stripe1 {
+  background-color: #244f75;
+  animation: mov1 1s;
+}
+
+#stripe2 {
+  background-color: #60bfbf;
+  animation: mov2 1s;
+}
+
+#stripe3 {
+  background-color: #8c4b7e;
+  animation: mov3 1s;
+}
+
+#stripe4 {
+  background-color: #f8bb44;
+  animation: move2 1s;
+}
+
+#stripe5 {
+  background-color: #f24b4b;
+  animation: mov4 1s;
+}
+
+/*MOVEMENTS*/
+
+@keyframes mov1 {
+  0% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes mov2 {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes mov3 {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes mov4 {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* HOVER*/
+
+.box {
+  overflow: hidden;
+}
+.stripe {
+  height: 100%;
+  position: relative;
+}
+.stripe::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  opacity: 0.09;
+  transform: skew(30deg) scaleY(1);
+  transition: all 0.6s;
+}
+.stripe::before .name {
+  display: block;
+  margin: 0;
+  width: 100%;
+}
+
+.stripe:hover::before {
+  transform: skew(0) scaleY(3);
+  transition: 0.1s;
+}
